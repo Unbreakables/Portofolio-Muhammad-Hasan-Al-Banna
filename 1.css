@@ -540,69 +540,173 @@ header{
 /*=========================================
     EXPERIENCE
 =========================================*/
+.timeline{
+
+    position: relative;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+}
+
+.timeline::before{
+
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+
+    background: var(--main-color);
+
+    top: 20;
+
+    bottom: 20;
+
+    left: 20px;
+
+}
+
 .timeline-item{
 
-    display:flex;
+    position: relative;
 
-    gap:25px;
+    margin-left: 60px;
 
-    align-items:flex-start;
+    margin-bottom: 45px;
 
-}
+    padding: 50px;
 
-.timeline-image{
+    background: rgba(255,255,255,.05);
 
-    flex:0 0 180px;
+    border: 1px solid rgba(255,255,255,.08);
 
-}
+    border-radius: 18px;
 
-.timeline-image img{
+    backdrop-filter: blur(10px);
 
-    width:100%;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    transition: .3s;
 
 }
 
-.timeline-image img:hover{
+.timeline-item:hover{
 
-    transform:scale(1.04);
+    transform: translateY(-6px);
 
-}
+    border-color: var(--main-color);
 
-.timeline-content{
-
-    flex:1;
+    box-shadow: var(--shadow);
 
 }
 
-.timeline-item h3{
-    font-size:2.2rem;
+.timeline-item::before{
+
+    content: "";
+
+    position: absolute;
+
+    left: -53px;
+
+    top: 28px;
+
+    width: 18px;
+
+    height: 18px;
+
+    background: var(--main-color);
+
+    border-radius: 50%;
+
+    border: 4px solid var(--bg-color);
+
 }
 
-.company{
-    font-size:1.6rem;
+
+.divisi{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 5px;
+
 }
-company span{
-    font-size:1.8rem;
-    color:var(--text-secondary);
-    font-style:italic;
+
+.divisi h3{
+
+    font-size: 12px;
+
 }
-.period{
-    font-size:1.5rem;
+ 
+
+.period span{
+
+    color: var(--main-color);
+
+    font-weight: 100;
+
+    font-size: 10px;
+
+}
+
+.timeline-content span{
+    font-size:1.2rem;
+}
+
+.company span{
+
+    color: var(--text-secondary);
+
+    margin-bottom: 15px;
+
+    font-style: italic;
+
+}
+
+.timeline-item ul{
+
+    padding-left: 18px;
+
 }
 
 .timeline-item li{
-    font-size:1.6rem;
-    line-height:1.8;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 12px;
+
+    line-height: 1.8;
+
+    text-align: justify;
+
 }
-/* =========================================
+
+.timeline-item li::marker{
+
+    color: var(--main-color);
+
+}
+
+.divisi2{
+
+    margin-bottom:15px;
+
+}
+
+.divisi2 h3{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:white;
+
+    margin-bottom:8px;
+
+}/* =========================================
    TIMELINE IMAGE
 ========================================= */
 
