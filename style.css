@@ -18,6 +18,7 @@
     outline:none;
 }
 
+
 :root{
 
     --main-color:#3b82f6;
@@ -54,6 +55,18 @@ body{
 
     overflow-x:hidden;
 
+}
+
+html{
+    font-size:62.5%;   /* 1rem = 10px */
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
 }
 
 /* Glow */
@@ -153,7 +166,11 @@ header{
 
     z-index: 1000;
 }
-
+.heading{
+    text-align:center;
+    font-size:3.6rem;
+    margin-bottom:5rem;
+}
 /* =========================================
    LOGO
 ========================================= */
@@ -171,7 +188,9 @@ header{
     color: var(--main-color);
 
 }
-
+.logo{
+    font-size:2.8rem;
+}
 /* =========================================
    NAVBAR
 ========================================= */
@@ -184,6 +203,9 @@ header{
 
     margin-left: 100px
 
+}
+.navbar a{
+    font-size:1.8rem;
 }
 
 .navbar a{
@@ -219,7 +241,13 @@ header{
     gap:60px;
 
 }
-
+.home{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:4rem;
+}
 /* =========================================
    HOME CONTENT
 ========================================= */
@@ -267,7 +295,23 @@ header{
     font-size : 24px;
 
 }
+.home-content h3{
+    font-size:2.2rem;
+}
 
+.home-content h1{
+    font-size:4.8rem;
+}
+
+.home-content h2{
+    font-size:3rem;
+    margin-bottom:2rem;
+}
+
+.home-content p{
+    font-size:1.7rem;
+    line-height:1.8;
+}
 
 /* =========================================
    FOTO
@@ -282,7 +326,10 @@ header{
     justify-content:flex-end;
 
 }
-
+.home-image img{
+    width:34rem;
+    height:34rem;
+}
 .home-image img{
 
     width:370px;
@@ -454,6 +501,10 @@ header{
 
     transform:translateY(-4px);
 
+}
+.btn{
+    padding:1.4rem 3rem;
+    font-size:1.6rem;
 }
 
 /* =========================================
@@ -1569,5 +1620,65 @@ button{
 a{
 
     transition:.3s;
+
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+@media (max-width:991px){
+
+    html{
+        font-size:56.25%;
+    }
+
+    section{
+        padding:7rem 6%;
+    }
+
+    .home{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .home-content p{
+        text-align:center;
+    }
+
+    .timeline-item{
+        flex-direction:column;
+    }
+
+    .timeline-image{
+        width:100%;
+        max-width:260px;
+        margin:auto;
+    }
+
+    .about-container{
+        flex-direction:column;
+    }
+
+}
+
+@media (max-width:768px){
+
+    html{
+        font-size:50%;
+    }
+
+    .navbar{
+        gap:2rem;
+        margin-left:0;
+    }
+
+    .home-content h1{
+        font-size:4.2rem;
+    }
+
+    .heading{
+        font-size:3.2rem;
+    }
 
 }
