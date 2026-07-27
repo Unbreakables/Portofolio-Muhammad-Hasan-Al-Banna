@@ -667,18 +667,6 @@ header{
     font-style: italic;
 
 }
-.company{
-    margin-top: .5rem;
-    margin-bottom: 1.5rem;
-}
-
-.company span{
-    font-size: 1.8rem;   /* Naikkan ukuran */
-    font-weight: 500;
-    color: var(--text-secondary);
-    display: block;
-    line-height: 1.6;
-}
 
 .timeline-item ul{
 
