@@ -642,37 +642,18 @@ header{
 
 }
  
+.company{
+   font-size:1.6rem;
+   font-style: italic;
+}
 
 .period{
-
-    color: var(--main-color);
-
-    font-weight: 600;
-
-    font-size: 15px;
-
+    font-size:1.5rem;
 }
 
-.company{
-
-    color: var(--text-secondary);
-
-    margin-bottom: 15px;
-
-    font-style: italic;
-
-}
 .company{
     margin-top: .5rem;
     margin-bottom: 1.5rem;
-}
-
-.company span{
-    font-size: 1.8rem;   /* Naikkan ukuran */
-    font-weight: 500;
-    color: var(--text-secondary);
-    display: block;
-    line-height: 1.6;
 }
 
 .timeline-item ul{
