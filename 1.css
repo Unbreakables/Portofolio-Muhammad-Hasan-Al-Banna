@@ -651,9 +651,7 @@ header{
     font-size: 10px;
 
 }
-.period spann{
-   font-size: 10px;
-}
+
 .timeline-content span{
     font-size:1.2rem;
 }
@@ -666,12 +664,6 @@ header{
 
     font-style: italic;
 
-}
-
-.company span{
-    font-size: 1.7rem;
-    color: var(--text-secondary);
-    font-style: italic;
 }
 
 .timeline-item ul{
@@ -759,6 +751,23 @@ header{
 
     flex:1;
 
+}
+
+.timeline-item h3{
+    font-size:2.2rem;
+}
+
+.company{
+    font-size:1.6rem;
+}
+
+.period{
+    font-size:1.5rem;
+}
+
+.timeline-item li{
+    font-size:1.6rem;
+    line-height:1.8;
 }
 
 /*=========================================
