@@ -586,11 +586,11 @@ header{
     font-size:2.2rem;
 }
 
-.company{
+.company span{
     font-size:1.6rem;
 }
 
-.period{
+.period span{
     font-size:1.5rem;
 }
 
