@@ -586,11 +586,15 @@ header{
     font-size:2.2rem;
 }
 
-.company span{
+.company{
     font-size:1.6rem;
 }
-
-.period span{
+company span{
+    font-size:1.8rem;
+    color:var(--text-secondary);
+    font-style:italic;
+}
+.period{
     font-size:1.5rem;
 }
 
@@ -598,24 +602,6 @@ header{
     font-size:1.6rem;
     line-height:1.8;
 }
-.divisi2{
-
-    margin-bottom:15px;
-
-}
-
-.divisi2 h3{
-
-    font-size:22px;
-
-    font-weight:700;
-
-    color:white;
-
-    margin-bottom:8px;
-
-}
-
 /* =========================================
    TIMELINE IMAGE
 ========================================= */
