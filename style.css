@@ -176,8 +176,6 @@ header{
 ========================================= */
 
 .logo{
-
-    font-size: 32px;
     color: white;
     font-weight: 700;
 
@@ -211,8 +209,6 @@ header{
 .navbar a{
 
     color:white;
-
-    font-size:25px;
 
     transition:.3s;
 
@@ -511,7 +507,7 @@ header{
    RESPONSIVE
 ========================================= */
 
-@media(max-width:991px)
+@media(max-width:991px){
 
 .home{
 
@@ -540,7 +536,7 @@ header{
     gap:18px;
 
 }
-
+}
 /*=========================================
     EXPERIENCE
 =========================================*/
