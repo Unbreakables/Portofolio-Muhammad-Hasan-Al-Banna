@@ -183,11 +183,9 @@ header{
     font-weight:700;
     text-decoration:none;
 }
-
 .logo img{
-    width:28px;      /* ubah sesuai kebutuhan */
-    height:28px;
-    object-fit:contain;
+    width:15px;
+    height:15px;
 }
 
 .logo .dot{
