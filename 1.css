@@ -177,7 +177,7 @@ header{
 .logo{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:8px;
     color:white;
     font-size:2.8rem;
     font-weight:700;
@@ -185,18 +185,13 @@ header{
 }
 
 .logo img{
-    width:45px;
-    height:45px;
+    width:28px;      /* ubah sesuai kebutuhan */
+    height:28px;
     object-fit:contain;
-}
-
-.logo span{
-    color:white;
 }
 
 .logo .dot{
     color:var(--main-color);
-}
 /* =========================================
    NAVBAR
 ========================================= */
