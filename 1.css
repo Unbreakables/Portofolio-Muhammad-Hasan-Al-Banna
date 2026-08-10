@@ -244,6 +244,19 @@ header{
     align-items:center;
     gap:4rem;
 }
+.home{
+
+    background:
+    linear-gradient(
+        rgba(2,6,23,.75),
+        rgba(2,6,23,.9)
+    ),
+    url('Foto-Banna.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 /* =========================================
    HOME CONTENT
 ========================================= */
