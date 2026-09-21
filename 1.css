@@ -1092,239 +1092,653 @@ header{
 
 }
 
-/*=========================================
-    EXPERIENCE
-=========================================*/
-.timeline{
+/* =========================================
+   EXPERIENCE
+========================================= */
 
+.timeline {
     position: relative;
-
-    max-width: 1000px;
-
-    margin: auto;
-
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 1rem 0 2rem;
 }
 
-.timeline::before{
 
+/* =========================================
+   TIMELINE LINE
+========================================= */
+
+.timeline::before {
     content: "";
-
     position: absolute;
 
-    width: 3px;
-
-    background: var(--main-color);
-
     top: 0;
-
     bottom: 0;
-
     left: 20px;
 
+    width: 2px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--main-color) 8%,
+            var(--main-color) 92%,
+            transparent
+        );
+
+    opacity: 0.65;
 }
 
-.timeline-item{
 
+/* =========================================
+   TIMELINE ITEM
+========================================= */
+
+.timeline-item {
     position: relative;
 
-    margin-left: 60px;
+    display: flex;
+    align-items: flex-start;
 
-    margin-bottom: 45px;
+    gap: 3rem;
 
-    padding: 50px;
+    margin-left: 6rem;
+    margin-bottom: 4rem;
 
-    background: rgba(255,255,255,.05);
+    padding: 2.8rem;
 
-    border: 1px solid rgba(255,255,255,.08);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.96),
+            rgba(15, 23, 42, 0.78)
+        );
+
+    border: 1px solid rgba(148, 163, 184, 0.13);
 
     border-radius: 18px;
 
-    backdrop-filter: blur(10px);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
 
-    transition: .3s;
+    overflow: hidden;
 
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
-.timeline-item:hover{
 
-    transform: translateY(-6px);
+/* animated top border */
 
-    border-color: var(--main-color);
-
-    box-shadow: var(--shadow);
-
-}
-
-.timeline-item::before{
-
+.timeline-item::after {
     content: "";
 
     position: absolute;
 
-    left: -53px;
+    top: 0;
+    left: 0;
 
-    top: 28px;
+    width: 0;
+    height: 2px;
 
-    width: 18px;
+    background:
+        linear-gradient(
+            90deg,
+            var(--main-color),
+            #60a5fa
+        );
 
-    height: 18px;
+    transition: width 0.6s ease;
+}
 
-    background: var(--main-color);
+
+/* subtle background glow */
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -120px;
+    right: -80px;
+
+    background: rgba(59, 130, 246, 0.08);
 
     border-radius: 50%;
 
-    border: 4px solid var(--bg-color);
+    filter: blur(50px);
 
+    opacity: 0;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.6s ease;
+
+    pointer-events: none;
 }
 
 
-.divisi{
+.timeline-item:hover {
+    transform: translateY(-6px);
 
+    border-color:
+        rgba(59, 130, 246, 0.35);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.3);
+}
+
+
+.timeline-item:hover::after {
+    width: 100%;
+}
+
+
+.timeline-item:hover::before {
+    opacity: 1;
+    transform: scale(1.4);
+}
+
+
+/* =========================================
+   TIMELINE DOT
+========================================= */
+
+.timeline-item > .timeline-dot {
+    position: absolute;
+
+    left: -51px;
+    top: 2.8rem;
+
+    width: 16px;
+    height: 16px;
+
+    background: var(--bg-color);
+
+    border: 3px solid var(--main-color);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 5px rgba(59, 130, 246, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.timeline-item:hover > .timeline-dot {
+    transform: scale(1.3);
+
+    box-shadow:
+        0 0 0 7px rgba(59, 130, 246, 0.12),
+        0 0 18px rgba(59, 130, 246, 0.4);
+}
+
+
+/* =========================================
+   CERTIFICATE / IMAGE
+========================================= */
+
+.timeline-image {
+    position: relative;
+
+    flex: 0 0 190px;
+
+    z-index: 2;
+}
+
+
+.timeline-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+
+    transition:
+        border-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.timeline-image img {
+    display: block;
+
+    width: 100%;
+    height: 135px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+.timeline-item:hover .timeline-image img {
+    transform: scale(1.035);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+.timeline-item:hover .timeline-image::after {
+    border-color:
+        rgba(59, 130, 246, 0.35);
+
+    transform: scale(1.02);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.timeline-content {
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   POSITION + PERIOD
+========================================= */
+
+.divisi {
     display: flex;
 
     justify-content: space-between;
+    align-items: flex-start;
 
-    align-items: center;
+    gap: 2rem;
 
-    margin-bottom: 5px;
-
+    margin-bottom: 0.7rem;
 }
 
-.divisi h3{
 
-    font-size: 12px;
+.divisi h3 {
+    margin: 0;
 
+    font-size: 2.05rem;
+
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    color: var(--text-color);
+
+    transition: color 0.3s ease;
 }
- 
+
+
+.timeline-item:hover .divisi h3 {
+    color: #f8fafc;
+}
+
 
 .period {
+    flex-shrink: 0;
+
+    padding: 0.45rem 0.9rem;
+
+    font-size: 1.25rem;
+
+    font-weight: 500;
 
     color: var(--main-color);
 
-    font-weight: 100;
+    border: 1px solid rgba(59, 130, 246, 0.2);
 
-    font-size: 10px;
+    border-radius: 6px;
 
+    background: rgba(59, 130, 246, 0.06);
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.timeline-content span{
-    font-size:1.2rem;
+
+.timeline-item:hover .period {
+    background: rgba(59, 130, 246, 0.12);
+
+    border-color:
+        rgba(59, 130, 246, 0.4);
 }
 
-.company {
 
-    color: var(--text-secondary);
-
-    margin-bottom: 15px;
-
-    font-style: italic;
-
-}
-
-.timeline-item ul{
-
-    padding-left: 18px;
-
-}
-
-.timeline-item li{
-
-    color: var(--text-secondary);
-
-    margin-bottom: 12px;
-
-    line-height: 1.8;
-
-    text-align: justify;
-
-}
-
-.timeline-item li::marker{
-
-    color: var(--main-color);
-
-}
-
-.divisi2{
-
-    margin-bottom:15px;
-
-}
-
-.divisi2 h3{
-
-    font-size:22px;
-
-    font-weight:700;
-
-    color:white;
-
-    margin-bottom:8px;
-
-}
-=========================================
-   TIMELINE IMAGE
+/* =========================================
+   COMPANY
 ========================================= */
 
-.timeline-item{
+.company {
+    margin: 0 0 1.8rem;
 
-    display:flex;
+    font-size: 1.5rem;
 
-    gap:25px;
+    font-style: normal;
 
-    align-items:flex-start;
+    color: var(--text-secondary);
+
+    transition: color 0.3s ease;
+}
+
+
+.timeline-item:hover .company {
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   SECONDARY TITLE
+========================================= */
+
+.divisi2 {
+    margin-bottom: 1rem;
+}
+
+
+.divisi2 h3 {
+    margin: 0;
+
+    font-size: 1.45rem;
+
+    font-weight: 600;
+
+    color: var(--main-color);
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================
+   DESCRIPTION / BULLETS
+========================================= */
+
+.timeline-item ul {
+    margin: 0;
+
+    padding-left: 1.8rem;
+}
+
+
+.timeline-item li {
+    margin-bottom: 0.9rem;
+
+    color: var(--text-secondary);
+
+    font-size: 1.45rem;
+
+    line-height: 1.75;
+
+    text-align: left;
+}
+
+
+.timeline-item li:last-child {
+    margin-bottom: 0;
+}
+
+
+.timeline-item li::marker {
+    color: var(--main-color);
+
+    font-size: 0.8em;
+}
+
+
+/* =========================================
+   IMAGE HOVER LABEL
+========================================= */
+
+.timeline-image {
+    overflow: hidden;
+
+    border-radius: 12px;
+}
+
+
+.timeline-image::before {
+    content: "VIEW";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -40%);
+
+    padding: 0.5rem 1rem;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    color: white;
+
+    background: rgba(2, 6, 23, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 6px;
+
+    opacity: 0;
+
+    z-index: 3;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.timeline-item:hover .timeline-image::before {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .timeline-item {
+        gap: 2.2rem;
+
+        padding: 2.5rem;
+    }
+
+    .timeline-image {
+        flex: 0 0 160px;
+    }
+
+    .timeline-image img {
+        height: 120px;
+    }
+
+    .divisi h3 {
+        font-size: 1.85rem;
+    }
 
 }
 
-.timeline-image{
 
-    flex:0 0 180px;
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .timeline {
+        padding-left: 0;
+    }
+
+
+    .timeline::before {
+        left: 10px;
+    }
+
+
+    .timeline-item {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 2rem;
+
+        margin-left: 3.5rem;
+
+        padding: 2.2rem;
+
+        border-radius: 15px;
+    }
+
+
+    .timeline-item > .timeline-dot {
+        left: -31px;
+
+        top: 2.5rem;
+
+        width: 14px;
+        height: 14px;
+    }
+
+
+    /* Certificate stays ABOVE content on mobile */
+
+    .timeline-image {
+        width: 100%;
+
+        flex: none;
+    }
+
+
+    .timeline-image img {
+        width: 100%;
+
+        height: 180px;
+
+        object-fit: cover;
+    }
+
+
+    .divisi {
+        flex-direction: column;
+
+        gap: 1rem;
+    }
+
+
+    .divisi h3 {
+        font-size: 1.8rem;
+    }
+
+
+    .period {
+        align-self: flex-start;
+
+        font-size: 1.2rem;
+    }
+
+
+    .company {
+        font-size: 1.4rem;
+
+        margin-bottom: 1.5rem;
+    }
+
+
+    .timeline-item li {
+        font-size: 1.35rem;
+
+        line-height: 1.7;
+    }
 
 }
 
-.timeline-image img{
 
-    width:100%;
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-    border-radius:12px;
+@media (max-width: 480px) {
 
-    cursor:pointer;
+    .timeline-item {
+        margin-left: 3rem;
 
-    transition:.3s;
+        padding: 1.8rem;
+    }
 
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
+
+    .timeline-item > .timeline-dot {
+        left: -26px;
+    }
+
+
+    .timeline-image img {
+        height: 155px;
+    }
 
 }
 
-.timeline-image img:hover{
 
-    transform:scale(1.04);
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .timeline-item,
+    .timeline-item::before,
+    .timeline-item::after,
+    .timeline-item > .timeline-dot,
+    .timeline-image img,
+    .timeline-image::before,
+    .timeline-image::after,
+    .divisi h3,
+    .period {
+        transition: none;
+    }
 
 }
-
-.timeline-content{
-
-    flex:1;
-
-}
-
-.timeline-item h3{
-    font-size:2.2rem;
-}
-
-.company{
-    font-size:1.6rem;
-}
-
-.period{
-    font-size:1.5rem;
-}
-
-.timeline-item li{
-    font-size:1.6rem;
-    line-height:1.8;
-}
-
 /*=========================================
     PELATIHAN
 =========================================*/
