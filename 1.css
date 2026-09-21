@@ -1093,23 +1093,160 @@ header{
 }
 
 /* =========================================
-   EXPERIENCE
+   EXPERIENCE SECTION
 ========================================= */
 
-.timeline {
+.experience {
     position: relative;
-    max-width: 1050px;
-    margin: 0 auto;
-    padding: 1rem 0 2rem;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(59, 130, 246, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(37, 99, 235, 0.06),
+            transparent 30%
+        ),
+        #020617;
 }
 
 
 /* =========================================
-   TIMELINE LINE
+   SUBTLE GRID BACKGROUND
 ========================================= */
+
+.experience::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(148, 163, 184, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 12%,
+            black 88%,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BLUE AMBIENT GLOW
+========================================= */
+
+.experience::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    top: 10%;
+    right: -250px;
+
+    background: rgba(59, 130, 246, 0.07);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   KEEP CONTENT ABOVE BACKGROUND
+========================================= */
+
+.experience > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.experience .heading {
+    position: relative;
+
+    text-align: center;
+
+    font-size: 4rem;
+
+    margin-bottom: 5rem;
+}
+
+.experience .heading span {
+    position: relative;
+}
+
+.experience .heading span::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -12px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--main-color);
+
+    transform: translateX(-50%);
+
+    transition: width 0.5s ease;
+}
+
+.experience:hover .heading span::after {
+    width: 55px;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+    position: relative;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 1rem 0 2rem;
+}
+
+
+/* timeline line */
 
 .timeline::before {
     content: "";
+
     position: absolute;
 
     top: 0;
@@ -1132,18 +1269,20 @@ header{
 
 
 /* =========================================
-   TIMELINE ITEM
+   EXPERIENCE CARD
 ========================================= */
 
 .timeline-item {
     position: relative;
 
     display: flex;
-    align-items: flex-start;
+
+    align-items: center;
 
     gap: 3rem;
 
     margin-left: 6rem;
+
     margin-bottom: 4rem;
 
     padding: 2.8rem;
@@ -1195,7 +1334,7 @@ header{
 }
 
 
-/* subtle background glow */
+/* card glow */
 
 .timeline-item::before {
     content: "";
@@ -1242,6 +1381,7 @@ header{
 
 .timeline-item:hover::before {
     opacity: 1;
+
     transform: scale(1.4);
 }
 
@@ -1250,11 +1390,11 @@ header{
    TIMELINE DOT
 ========================================= */
 
-.timeline-item > .timeline-dot {
+.timeline-dot {
     position: absolute;
 
     left: -51px;
-    top: 2.8rem;
+    top: 50%;
 
     width: 16px;
     height: 16px;
@@ -1265,6 +1405,8 @@ header{
 
     border-radius: 50%;
 
+    transform: translateY(-50%);
+
     box-shadow:
         0 0 0 5px rgba(59, 130, 246, 0.08);
 
@@ -1274,8 +1416,10 @@ header{
 }
 
 
-.timeline-item:hover > .timeline-dot {
-    transform: scale(1.3);
+.timeline-item:hover .timeline-dot {
+    transform:
+        translateY(-50%)
+        scale(1.3);
 
     box-shadow:
         0 0 0 7px rgba(59, 130, 246, 0.12),
@@ -1284,7 +1428,7 @@ header{
 
 
 /* =========================================
-   CERTIFICATE / IMAGE
+   CERTIFICATE IMAGE
 ========================================= */
 
 .timeline-image {
@@ -1292,26 +1436,9 @@ header{
 
     flex: 0 0 190px;
 
-    z-index: 2;
-}
-
-
-.timeline-image::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
+    overflow: hidden;
 
     border-radius: 12px;
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
-    pointer-events: none;
-
-    transition:
-        border-color 0.35s ease,
-        transform 0.35s ease;
 }
 
 
@@ -1319,6 +1446,7 @@ header{
     display: block;
 
     width: 100%;
+
     height: 135px;
 
     object-fit: cover;
@@ -1338,20 +1466,12 @@ header{
 
 
 .timeline-item:hover .timeline-image img {
-    transform: scale(1.035);
+    transform: scale(1.04);
 
     filter: brightness(1.08);
 
     box-shadow:
         0 15px 30px rgba(0, 0, 0, 0.35);
-}
-
-
-.timeline-item:hover .timeline-image::after {
-    border-color:
-        rgba(59, 130, 246, 0.35);
-
-    transform: scale(1.02);
 }
 
 
@@ -1378,11 +1498,12 @@ header{
     display: flex;
 
     justify-content: space-between;
-    align-items: flex-start;
+
+    align-items: center;
 
     gap: 2rem;
 
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
 }
 
 
@@ -1444,47 +1565,18 @@ header{
 ========================================= */
 
 .company {
-    margin: 0 0 1.8rem;
+    margin-bottom: 1.8rem;
 
     font-size: 1.5rem;
 
     font-style: normal;
 
     color: var(--text-secondary);
-
-    transition: color 0.3s ease;
-}
-
-
-.timeline-item:hover .company {
-    color: #cbd5e1;
 }
 
 
 /* =========================================
-   SECONDARY TITLE
-========================================= */
-
-.divisi2 {
-    margin-bottom: 1rem;
-}
-
-
-.divisi2 h3 {
-    margin: 0;
-
-    font-size: 1.45rem;
-
-    font-weight: 600;
-
-    color: var(--main-color);
-
-    letter-spacing: 0.3px;
-}
-
-
-/* =========================================
-   DESCRIPTION / BULLETS
+   BULLET LIST
 ========================================= */
 
 .timeline-item ul {
@@ -1520,95 +1612,20 @@ header{
 
 
 /* =========================================
-   IMAGE HOVER LABEL
-========================================= */
-
-.timeline-image {
-    overflow: hidden;
-
-    border-radius: 12px;
-}
-
-
-.timeline-image::before {
-    content: "VIEW";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -40%);
-
-    padding: 0.5rem 1rem;
-
-    font-size: 1rem;
-
-    font-weight: 600;
-
-    letter-spacing: 1px;
-
-    color: white;
-
-    background: rgba(2, 6, 23, 0.72);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
-    border-radius: 6px;
-
-    opacity: 0;
-
-    z-index: 3;
-
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
-}
-
-
-.timeline-item:hover .timeline-image::before {
-    opacity: 1;
-
-    transform:
-        translate(-50%, -50%);
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-    .timeline-item {
-        gap: 2.2rem;
-
-        padding: 2.5rem;
-    }
-
-    .timeline-image {
-        flex: 0 0 160px;
-    }
-
-    .timeline-image img {
-        height: 120px;
-    }
-
-    .divisi h3 {
-        font-size: 1.85rem;
-    }
-
-}
-
-
-/* =========================================
    MOBILE
 ========================================= */
 
 @media (max-width: 768px) {
 
+    .experience .heading {
+        font-size: 3.2rem;
+
+        margin-bottom: 4rem;
+    }
+
+
     .timeline {
-        padding-left: 0;
+        padding: 1rem 0;
     }
 
 
@@ -1618,9 +1635,9 @@ header{
 
 
     .timeline-item {
-        display: flex;
-
         flex-direction: column;
+
+        align-items: stretch;
 
         gap: 2rem;
 
@@ -1632,17 +1649,19 @@ header{
     }
 
 
-    .timeline-item > .timeline-dot {
+    .timeline-dot {
         left: -31px;
 
         top: 2.5rem;
 
-        width: 14px;
-        height: 14px;
+        transform: none;
     }
 
 
-    /* Certificate stays ABOVE content on mobile */
+    .timeline-item:hover .timeline-dot {
+        transform: scale(1.25);
+    }
+
 
     .timeline-image {
         width: 100%;
@@ -1655,13 +1674,13 @@ header{
         width: 100%;
 
         height: 180px;
-
-        object-fit: cover;
     }
 
 
     .divisi {
         flex-direction: column;
+
+        align-items: flex-start;
 
         gap: 1rem;
     }
@@ -1673,8 +1692,6 @@ header{
 
 
     .period {
-        align-self: flex-start;
-
         font-size: 1.2rem;
     }
 
@@ -1708,7 +1725,7 @@ header{
     }
 
 
-    .timeline-item > .timeline-dot {
+    .timeline-dot {
         left: -26px;
     }
 
@@ -1729,10 +1746,8 @@ header{
     .timeline-item,
     .timeline-item::before,
     .timeline-item::after,
-    .timeline-item > .timeline-dot,
+    .timeline-dot,
     .timeline-image img,
-    .timeline-image::before,
-    .timeline-image::after,
     .divisi h3,
     .period {
         transition: none;
