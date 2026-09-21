@@ -549,10 +549,12 @@ header{
    EDUCATION
 ========================================= */
 
+.pendidikan{
+    position:relative;
+}
+
 .education-card{
-
     max-width:1000px;
-
     margin:0 auto;
 
     padding:3.5rem 4rem;
@@ -563,20 +565,23 @@ header{
 
     border-radius:16px;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.20);
+    box-shadow:var(--shadow);
 
     position:relative;
-
     overflow:hidden;
 
     transition:.3s;
-
 }
 
-/* Blue accent line */
+.education-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+
+/* BLUE ACCENT */
 
 .education-card::before{
-
     content:"";
 
     position:absolute;
@@ -588,18 +593,15 @@ header{
     height:100%;
 
     background:var(--main-color);
-
 }
 
 
-/* University + Date */
+/* UNIVERSITY + DATE */
 
 .education-header{
-
     display:flex;
 
     justify-content:space-between;
-
     align-items:flex-start;
 
     gap:3rem;
@@ -607,29 +609,23 @@ header{
     padding-bottom:2.5rem;
 
     border-bottom:1px solid rgba(148,163,184,.12);
-
 }
 
 .education-header h3{
-
     font-size:2.5rem;
 
-    color:white;
+    color:var(--text-color);
 
     margin-bottom:.6rem;
-
 }
 
 .degree{
-
     font-size:1.6rem;
 
     color:var(--text-secondary);
-
 }
 
 .education-meta{
-
     display:flex;
 
     flex-direction:column;
@@ -639,30 +635,24 @@ header{
     gap:.5rem;
 
     white-space:nowrap;
-
 }
 
 .education-meta span{
-
     font-size:1.5rem;
 
     color:var(--main-color);
-
 }
 
 .education-meta strong{
-
     font-size:1.4rem;
 
-    color:white;
-
+    color:var(--text-color);
 }
 
 
-/* Details */
+/* THESIS + COURSEWORK */
 
 .education-details{
-
     display:grid;
 
     grid-template-columns:1fr 1fr;
@@ -670,12 +660,10 @@ header{
     gap:3rem;
 
     padding-top:2.5rem;
-
 }
 
 .education-detail h4{
-
-    font-size:1.5rem;
+    font-size:1.4rem;
 
     color:var(--main-color);
 
@@ -683,18 +671,15 @@ header{
 
     text-transform:uppercase;
 
-    letter-spacing:.5px;
-
+    letter-spacing:.6px;
 }
 
 .education-detail p{
-
     font-size:1.45rem;
 
     line-height:1.8;
 
     color:var(--text-secondary);
-
 }
 
 /*=========================================
@@ -1236,58 +1221,6 @@ header{
     color: var(--text-secondary);
 
     font-size: 14px;
-
-}
-
-.education-card{
-
-    max-width:700px;
-
-    margin:auto;
-
-    text-align:center;
-
-    background:var(--card-color);
-
-    padding:40px;
-
-    border-radius:20px;
-
-    box-shadow:var(--shadow);
-
-    transition:.4s;
-
-}
-
-.education-card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.education-card h3{
-
-    font-size:2.5rem;
-
-    margin-bottom:15px;
-
-}
-
-.education-card span{
-
-    color:var(--main-color);
-
-    font-size:1.8rem;
-
-}
-
-.education-card p{
-
-    margin-top:20px;
-
-    font-size:1.6rem;
-
-    color:var(--text-secondary);
 
 }
 
