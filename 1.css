@@ -566,7 +566,6 @@ header{
         );
 }
 
-
 /* =========================================
    HEADING
 ========================================= */
@@ -607,7 +606,6 @@ header{
     width: 55px;
 }
 
-
 /* =========================================
    MAIN CARD
 ========================================= */
@@ -643,7 +641,6 @@ header{
         border-color 0.45s ease,
         box-shadow 0.45s ease;
 }
-
 
 /* animated top border */
 
@@ -695,7 +692,6 @@ header{
     pointer-events: none;
 }
 
-
 .education-card:hover {
     transform: translateY(-7px);
 
@@ -718,7 +714,6 @@ header{
     opacity: 1;
 }
 
-
 /* =========================================
    HEADER
 ========================================= */
@@ -735,7 +730,6 @@ header{
     gap: 3rem;
 }
 
-
 /* =========================================
    MAIN TITLE
 ========================================= */
@@ -743,7 +737,6 @@ header{
 .education-main {
     text-align: left;
 }
-
 
 .education-label {
     display: block;
@@ -761,7 +754,6 @@ header{
     opacity: 0.9;
 }
 
-
 .education-main h3 {
     font-size: 2.7rem;
 
@@ -776,11 +768,9 @@ header{
     transition: color 0.3s ease;
 }
 
-
 .education-card:hover .education-main h3 {
     color: #e2e8f0;
 }
-
 
 .education-main .degree {
     font-size: 1.7rem;
@@ -789,7 +779,6 @@ header{
 
     color: var(--text-secondary);
 }
-
 
 /* =========================================
    DATE
@@ -817,12 +806,10 @@ header{
     transition: color 0.3s ease;
 }
 
-
 .education-card:hover .education-date span:first-child,
 .education-card:hover .education-date span:last-child {
     color: var(--main-color);
 }
-
 
 .date-line {
     width: 25px;
@@ -835,13 +822,11 @@ header{
         background 0.4s ease;
 }
 
-
 .education-card:hover .date-line {
     width: 40px;
 
     background: var(--main-color);
 }
-
 
 /* =========================================
    ANIMATED DIVIDER
@@ -858,7 +843,6 @@ header{
     background: rgba(148, 163, 184, 0.1);
 }
 
-
 .education-line span {
     position: absolute;
 
@@ -873,11 +857,9 @@ header{
     transition: width 0.8s ease;
 }
 
-
 .education-card:hover .education-line span {
     width: 100%;
 }
-
 
 /* =========================================
    DETAILS
@@ -894,7 +876,6 @@ header{
     gap: 0;
 }
 
-
 /* =========================================
    DETAIL ITEM
 ========================================= */
@@ -909,14 +890,12 @@ header{
     padding-right: 4rem;
 }
 
-
 .education-detail + .education-detail {
     padding-left: 4rem;
     padding-right: 0;
 
     border-left: 1px solid rgba(148, 163, 184, 0.1);
 }
-
 
 /* =========================================
    NUMBER
@@ -938,13 +917,11 @@ header{
         transform 0.3s ease;
 }
 
-
 .education-detail:hover .detail-number {
     color: var(--main-color);
 
     transform: translateX(4px);
 }
-
 
 /* =========================================
    DETAIL CONTENT
@@ -953,7 +930,6 @@ header{
 .detail-content {
     min-width: 0;
 }
-
 
 .detail-label {
     display: block;
@@ -986,13 +962,11 @@ header{
         color 0.35s ease;
 }
 
-
 .education-detail:hover h4 {
     transform: translateX(5px);
 
     color: #f8fafc;
 }
-
 
 .education-detail p {
     font-size: 1.4rem;
@@ -1003,7 +977,6 @@ header{
 
     margin: 0;
 }
-
 
 /* =========================================
    TABLET
@@ -1025,7 +998,6 @@ header{
 
 }
 
-
 /* =========================================
    MOBILE
 ========================================= */
@@ -1038,13 +1010,11 @@ header{
         margin-bottom: 4rem;
     }
 
-
     .education-card {
         padding: 2.8rem 2.2rem;
 
         border-radius: 16px;
     }
-
 
     .education-header {
         flex-direction: column;
@@ -1081,11 +1051,9 @@ header{
         gap: 2.5rem;
     }
 
-
     .education-detail {
         padding-right: 0;
     }
-
 
     .education-detail + .education-detail {
         padding-left: 0;
@@ -1097,18 +1065,15 @@ header{
         border-top: 1px solid rgba(148, 163, 184, 0.1);
     }
 
-
     .education-detail h4 {
         font-size: 1.45rem;
     }
-
 
     .education-detail p {
         font-size: 1.35rem;
     }
 
 }
-
 
 /* =========================================
    REDUCED MOTION
@@ -1126,6 +1091,7 @@ header{
     }
 
 }
+
 /*=========================================
     EXPERIENCE
 =========================================*/
