@@ -1093,43 +1093,102 @@ header{
 }
 
 /* =========================================================
-   EXPERIENCE — PREMIUM / MODERN
+   EXPERIENCE — PREMIUM INTERACTIVE
    ========================================================= */
 
 .experience {
   position: relative;
-  padding: 110px 0 130px;
+  padding: 105px 0 125px;
   overflow: hidden;
+
   background:
-    radial-gradient(circle at 8% 15%, rgba(59,130,246,.13), transparent 30%),
-    radial-gradient(circle at 92% 80%, rgba(14,165,233,.09), transparent 30%),
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(56,189,248,.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 78%,
+      rgba(59,130,246,.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(14,165,233,.055),
+      transparent 35%
+    ),
     #020617;
 }
 
-/* Background grid */
+
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
 .experience::before {
   content: "";
   position: absolute;
   inset: 0;
+
   background-image:
-    linear-gradient(rgba(148,163,184,.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148,163,184,.025) 1px, transparent 1px);
-  background-size: 45px 45px;
+    linear-gradient(
+      rgba(148,163,184,.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(148,163,184,.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 90%
+  );
+
   pointer-events: none;
 }
 
-/* Decorative glow */
+
+/* =========================================================
+   DECORATIVE LIGHT
+   ========================================================= */
+
 .experience::after {
   content: "";
+
   position: absolute;
-  width: 420px;
-  height: 420px;
-  right: -220px;
-  top: 25%;
+
+  width: 500px;
+  height: 500px;
+
+  right: -280px;
+  top: 35%;
+
   border-radius: 50%;
-  background: rgba(56,189,248,.045);
-  filter: blur(90px);
+
+  background: rgba(56,189,248,.055);
+
+  filter: blur(100px);
+
+  animation: experienceGlow 8s ease-in-out infinite alternate;
+
   pointer-events: none;
+}
+
+@keyframes experienceGlow {
+  from {
+    transform: translateY(-20px) scale(.95);
+    opacity: .5;
+  }
+
+  to {
+    transform: translateY(30px) scale(1.08);
+    opacity: 1;
+  }
 }
 
 
@@ -1141,26 +1200,33 @@ header{
   position: relative;
   z-index: 2;
 
-  margin-bottom: 80px;
+  margin-bottom: 75px;
 
   text-align: center;
 
   color: #f8fafc;
-  font-size: clamp(2.6rem, 5vw, 4rem);
+
+  font-size: clamp(2.5rem, 5vw, 3.7rem);
+
   font-weight: 800;
-  letter-spacing: -.045em;
+
+  letter-spacing: -.04em;
 }
 
 .experience .heading::before {
   content: "CAREER JOURNEY";
 
   display: block;
+
   margin-bottom: 10px;
 
   color: #38bdf8;
-  font-size: .68rem;
+
+  font-size: .66rem;
+
   font-weight: 700;
-  letter-spacing: .25em;
+
+  letter-spacing: .28em;
 }
 
 .experience .heading::after {
@@ -1171,13 +1237,25 @@ header{
   width: 55px;
   height: 3px;
 
-  margin: 17px auto 0;
+  margin: 16px auto 0;
 
-  border-radius: 10px;
+  border-radius: 20px;
 
   background: #38bdf8;
 
-  box-shadow: 0 0 18px rgba(56,189,248,.4);
+  box-shadow:
+    0 0 12px rgba(56,189,248,.45);
+
+  transition:
+    width .4s ease,
+    box-shadow .4s ease;
+}
+
+.experience .heading:hover::after {
+  width: 90px;
+
+  box-shadow:
+    0 0 22px rgba(56,189,248,.7);
 }
 
 
@@ -1189,7 +1267,8 @@ header{
   position: relative;
   z-index: 2;
 
-  width: min(1220px, 93%);
+  width: min(1220px, 92%);
+
   margin: 0 auto;
 }
 
@@ -1200,7 +1279,8 @@ header{
 
   top: 0;
   bottom: 0;
-  left: 30px;
+
+  left: 25px;
 
   width: 2px;
 
@@ -1208,15 +1288,15 @@ header{
     linear-gradient(
       to bottom,
       transparent,
-      rgba(56,189,248,.38) 8%,
-      rgba(56,189,248,.38) 92%,
+      rgba(56,189,248,.4) 8%,
+      rgba(56,189,248,.4) 92%,
       transparent
     );
 }
 
 
 /* =========================================================
-   ITEM
+   TIMELINE ITEM
    ========================================================= */
 
 .timeline-item {
@@ -1224,26 +1304,33 @@ header{
 
   display: grid;
 
-  grid-template-columns: 130px minmax(0,1fr);
+  grid-template-columns:
+    95px
+    minmax(0,1fr);
 
   gap: 2rem;
 
-  margin-left: 5.2rem;
+  margin-left: 4.4rem;
+
   margin-bottom: 4.5rem;
 }
 
 
-/* Timeline node */
+/* =========================================================
+   TIMELINE NODE
+   ========================================================= */
+
 .timeline-item::before {
   content: "";
 
   position: absolute;
 
-  top: 36px;
-  left: -4rem;
+  top: 38px;
 
-  width: 13px;
-  height: 13px;
+  left: -3.95rem;
+
+  width: 12px;
+  height: 12px;
 
   border-radius: 50%;
 
@@ -1253,24 +1340,36 @@ header{
 
   box-shadow:
     0 0 0 5px rgba(56,189,248,.08),
-    0 0 20px rgba(56,189,248,.45);
+    0 0 20px rgba(56,189,248,.5);
 
   z-index: 5;
 
   animation: timelinePulse 3s ease-in-out infinite;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.35);
+
+  box-shadow:
+    0 0 0 8px rgba(56,189,248,.07),
+    0 0 30px rgba(56,189,248,.65);
 }
 
 @keyframes timelinePulse {
   0%,100% {
     box-shadow:
       0 0 0 5px rgba(56,189,248,.08),
-      0 0 15px rgba(56,189,248,.25);
+      0 0 15px rgba(56,189,248,.3);
   }
 
   50% {
     box-shadow:
-      0 0 0 8px rgba(56,189,248,.04),
-      0 0 25px rgba(56,189,248,.45);
+      0 0 0 8px rgba(56,189,248,.035),
+      0 0 25px rgba(56,189,248,.5);
   }
 }
 
@@ -1279,22 +1378,16 @@ header{
    META / DATE
    ========================================================= */
 
-/*
-   Date dibuat tidak lagi dominan di kolom kiri.
-   Kolom kiri dibuat minimal supaya card lebih lebar.
-*/
-
 .timeline-meta {
-  padding-top: 25px;
-}
-
-.timeline-meta::before {
-  content: "";
+  padding-top: 28px;
 }
 
 .timeline-meta .date {
   color: #94a3b8;
-  font-size: .9rem;
+
+  font-size: .82rem;
+
+  line-height: 1.5;
 }
 
 
@@ -1305,17 +1398,17 @@ header{
 .timeline-content {
   position: relative;
 
-  min-height: 320px;
+  min-height: 340px;
 
-  padding: 2.5rem;
+  padding: 2rem;
 
   overflow: hidden;
 
   background:
     linear-gradient(
       145deg,
-      rgba(15,23,42,.98),
-      rgba(15,23,42,.88)
+      rgba(15,23,42,.96),
+      rgba(15,23,42,.84)
     );
 
   border: 1px solid rgba(148,163,184,.13);
@@ -1323,27 +1416,36 @@ header{
   border-radius: 22px;
 
   box-shadow:
-    0 20px 55px rgba(0,0,0,.28),
+    0 18px 50px rgba(0,0,0,.28),
     inset 0 1px 0 rgba(255,255,255,.025);
 
   transition:
-    transform .35s ease,
+    transform .45s cubic-bezier(.2,.8,.2,1),
     border-color .35s ease,
-    box-shadow .35s ease;
+    box-shadow .45s ease;
 }
+
+
+/* Hover card */
 
 .timeline-content:hover {
-  transform: translateY(-6px);
+  transform:
+    translateY(-7px)
+    scale(1.008);
 
-  border-color: rgba(56,189,248,.25);
+  border-color:
+    rgba(56,189,248,.3);
 
   box-shadow:
-    0 28px 65px rgba(0,0,0,.38),
-    0 0 30px rgba(56,189,248,.04);
+    0 28px 70px rgba(0,0,0,.4),
+    0 0 35px rgba(56,189,248,.055);
 }
 
 
-/* Top accent line */
+/* =========================================================
+   CARD TOP ACCENT
+   ========================================================= */
+
 .timeline-content::before {
   content: "";
 
@@ -1352,86 +1454,147 @@ header{
   top: 0;
   left: 0;
 
-  width: 90px;
+  width: 75px;
   height: 2px;
 
   background: #38bdf8;
 
-  box-shadow: 0 0 15px rgba(56,189,248,.5);
+  box-shadow:
+    0 0 15px rgba(56,189,248,.55);
 
-  transition: width .4s ease;
+  transition:
+    width .45s ease;
 }
 
 .timeline-content:hover::before {
-  width: 200px;
+  width: 180px;
 }
 
 
 /* =========================================================
-   DATE — RIGHT TOP
+   SUBTLE CARD LIGHT
+   ========================================================= */
+
+.timeline-content::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -100px;
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(56,189,248,.035);
+
+  filter: blur(25px);
+
+  pointer-events: none;
+
+  transition:
+    transform .5s ease,
+    opacity .5s ease;
+}
+
+.timeline-content:hover::after {
+  transform: scale(1.5);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   DATE — CARD
    ========================================================= */
 
 .timeline-content .date {
   position: absolute;
 
-  top: 22px;
-  right: 25px;
+  top: 19px;
+  right: 20px;
 
   display: inline-flex;
 
   align-items: center;
-  gap: 8px;
 
-  padding: 7px 13px;
+  gap: 7px;
+
+  padding: 6px 11px;
 
   color: #bae6fd;
 
-  background: rgba(14,165,233,.07);
+  background:
+    rgba(14,165,233,.065);
 
-  border: 1px solid rgba(56,189,248,.2);
+  border:
+    1px solid rgba(56,189,248,.2);
 
   border-radius: 999px;
 
-  font-size: .72rem;
+  font-size: .68rem;
+
   font-weight: 700;
 
-  letter-spacing: .05em;
+  letter-spacing: .04em;
 
   white-space: nowrap;
 
-  z-index: 4;
+  z-index: 5;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    background .3s ease,
+    border-color .3s ease,
+    transform .3s ease;
+}
+
+.timeline-content:hover .date {
+  background:
+    rgba(14,165,233,.12);
+
+  border-color:
+    rgba(56,189,248,.35);
+
+  transform: translateY(-2px);
 }
 
 .timeline-content .date::before {
   content: "";
 
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
   background: #38bdf8;
 
-  box-shadow: 0 0 10px rgba(56,189,248,.7);
+  box-shadow:
+    0 0 9px rgba(56,189,248,.8);
 
   animation: dateDot 2s ease-in-out infinite;
 }
 
 @keyframes dateDot {
   0%,100% {
-    opacity: .5;
+    opacity: .45;
     transform: scale(.8);
   }
 
   50% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.1);
   }
 }
 
 
 /* =========================================================
-   CERTIFICATE — BIG LEFT
+   CERTIFICATE — LARGE LEFT
    ========================================================= */
 
 .timeline-image {
@@ -1439,17 +1602,21 @@ header{
 
   float: left;
 
-  width: 49%;
+  width: 46%;
 
   margin:
     0
-    2.7rem
+    2.4rem
     1rem
     0;
+
+  z-index: 2;
 }
 
 
-/* Certificate image */
+/* =========================================================
+   CERTIFICATE IMAGE
+   ========================================================= */
 
 .timeline-image img {
   display: block;
@@ -1457,84 +1624,116 @@ header{
   width: 100%;
   height: auto;
 
-  max-height: 480px;
+  max-height: 430px;
 
   object-fit: contain;
 
   object-position: center;
 
-  padding: 4px;
+  padding: 5px;
 
-  background: #0b1220;
+  background:
+    linear-gradient(
+      145deg,
+      #0f172a,
+      #0b1220
+    );
 
-  border: 1px solid rgba(148,163,184,.15);
+  border:
+    1px solid rgba(148,163,184,.16);
 
-  border-radius: 15px;
+  border-radius: 14px;
 
   box-shadow:
-    0 15px 40px rgba(0,0,0,.32);
+    0 14px 38px rgba(0,0,0,.32);
 
   cursor: pointer;
 
   transition:
-    transform .4s ease,
-    box-shadow .4s ease;
+    transform .5s cubic-bezier(.2,.8,.2,1),
+    box-shadow .4s ease,
+    border-color .35s ease;
 }
+
+
+/* Image hover */
 
 .timeline-image img:hover {
-  transform: scale(1.018);
+  transform:
+    translateY(-5px)
+    scale(1.015);
+
+  border-color:
+    rgba(56,189,248,.32);
 
   box-shadow:
-    0 22px 50px rgba(0,0,0,.4),
-    0 0 25px rgba(56,189,248,.06);
+    0 24px 55px rgba(0,0,0,.42),
+    0 0 28px rgba(56,189,248,.07);
 }
 
 
-/* Certificate label */
+/* =========================================================
+   CERTIFICATE LABEL
+   ========================================================= */
 
 .timeline-image::before {
   content: "CERTIFICATE";
 
   position: absolute;
 
-  top: 12px;
-  left: 12px;
+  top: 11px;
+  left: 11px;
 
-  z-index: 4;
+  z-index: 5;
 
-  padding: 5px 9px;
+  padding: 5px 8px;
 
   color: #e0f2fe;
 
-  background: rgba(2,6,23,.82);
+  background:
+    rgba(2,6,23,.84);
 
-  border: 1px solid rgba(56,189,248,.2);
+  border:
+    1px solid rgba(56,189,248,.22);
 
   border-radius: 6px;
 
-  font-size: .5rem;
+  font-size: .48rem;
+
   font-weight: 700;
 
   letter-spacing: .13em;
 
   backdrop-filter: blur(8px);
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease;
+}
+
+.timeline-image:hover::before {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(56,189,248,.4);
 }
 
 
 /* =========================================================
-   POSITION
+   POSITION / ROLE
    ========================================================= */
 
 .divisi h3 {
-  margin: 0 0 .45rem;
+  margin: 0 0 .4rem;
 
-  padding-top: 2.8rem;
+  padding-top: 2.6rem;
 
   color: #f8fafc;
 
-  font-size: clamp(2rem, 3vw, 2.55rem);
+  font-size:
+    clamp(1.65rem, 2.5vw, 2.15rem);
 
-  line-height: 1.12;
+  line-height: 1.18;
 
   font-weight: 800;
 
@@ -1542,23 +1741,31 @@ header{
 }
 
 
-/* Small accent under position */
+/* Animated underline */
 
 .divisi h3::after {
   content: "";
 
   display: block;
 
-  width: 40px;
+  width: 35px;
   height: 2px;
 
-  margin-top: 11px;
+  margin-top: 10px;
 
   border-radius: 10px;
 
   background: #38bdf8;
 
-  box-shadow: 0 0 10px rgba(56,189,248,.3);
+  box-shadow:
+    0 0 10px rgba(56,189,248,.3);
+
+  transition:
+    width .4s ease;
+}
+
+.timeline-content:hover .divisi h3::after {
+  width: 70px;
 }
 
 
@@ -1567,15 +1774,22 @@ header{
    ========================================================= */
 
 .company {
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.25rem;
 
   color: #38bdf8;
 
-  font-size: 1.45rem;
+  font-size: 1.18rem;
 
-  line-height: 1.4;
+  line-height: 1.45;
 
   font-weight: 650;
+
+  transition:
+    color .3s ease;
+}
+
+.timeline-content:hover .company {
+  color: #7dd3fc;
 }
 
 
@@ -1586,23 +1800,33 @@ header{
 .timeline-content ul {
   margin: 0;
 
-  padding-left: 1.25rem;
+  padding-left: 1.15rem;
 
   color: #cbd5e1;
 
-  font-size: 1rem;
+  font-size: .96rem;
 
-  line-height: 1.7;
+  line-height: 1.68;
 }
 
 .timeline-content li {
-  margin-bottom: .8rem;
+  margin-bottom: .65rem;
 
-  padding-left: .2rem;
+  padding-left: .18rem;
+
+  transition:
+    transform .3s ease,
+    color .3s ease;
 }
 
 .timeline-content li::marker {
   color: #38bdf8;
+}
+
+.timeline-content li:hover {
+  transform: translateX(4px);
+
+  color: #e2e8f0;
 }
 
 .timeline-content li:last-child {
@@ -1610,16 +1834,17 @@ header{
 }
 
 
-/* Clear float */
-.timeline-content::after {
-  content: "";
-  display: block;
-  clear: both;
+/* =========================================================
+   CLEAR FLOAT
+   ========================================================= */
+
+.timeline-content {
+  display: flow-root;
 }
 
 
 /* =========================================================
-   MODAL
+   MODAL — FULL CERTIFICATE
    ========================================================= */
 
 .modal img {
@@ -1633,6 +1858,8 @@ header{
   object-fit: contain;
 
   margin: auto;
+
+  border-radius: 8px;
 }
 
 
@@ -1651,45 +1878,48 @@ header{
   }
 
   .timeline-item {
-    grid-template-columns: 100px minmax(0,1fr);
+    grid-template-columns:
+      80px
+      minmax(0,1fr);
 
     gap: 1.4rem;
 
-    margin-left: 4.6rem;
+    margin-left: 4rem;
   }
 
   .timeline-content {
-    padding: 2rem;
+    padding: 1.7rem;
   }
 
   .timeline-image {
-    width: 47%;
+    width: 45%;
 
-    margin-right: 1.8rem;
+    margin-right: 1.6rem;
   }
 
   .timeline-image img {
-    max-height: 390px;
+    max-height: 360px;
   }
 
   .divisi h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .company {
-    font-size: 1.25rem;
+    font-size: 1.08rem;
   }
 
   .timeline-content ul {
-    font-size: .94rem;
-    line-height: 1.62;
+    font-size: .91rem;
+
+    line-height: 1.6;
   }
 
   .timeline-content .date {
-    top: 18px;
-    right: 18px;
+    top: 16px;
+    right: 16px;
 
-    font-size: .65rem;
+    font-size: .62rem;
   }
 }
 
@@ -1707,11 +1937,11 @@ header{
   .experience .heading {
     margin-bottom: 45px;
 
-    font-size: 2.35rem;
+    font-size: 2.3rem;
   }
 
   .experience .heading::before {
-    font-size: .55rem;
+    font-size: .54rem;
   }
 
   .timeline {
@@ -1733,7 +1963,8 @@ header{
   }
 
   .timeline-item::before {
-    top: 24px;
+    top: 25px;
+
     left: 2px;
 
     width: 10px;
@@ -1741,7 +1972,8 @@ header{
   }
 
 
-  /* Date column disappears */
+  /* Hide desktop meta */
+
   .timeline-meta {
     display: none;
   }
@@ -1758,22 +1990,15 @@ header{
   }
 
 
-  /* Date on card */
+  /* Date */
 
   .timeline-content .date {
-    top: 15px;
-    right: 15px;
+    top: 14px;
+    right: 14px;
 
-    padding: 5px 9px;
+    padding: 5px 8px;
 
-    font-size: .58rem;
-
-    gap: 5px;
-  }
-
-  .timeline-content .date::before {
-    width: 5px;
-    height: 5px;
+    font-size: .56rem;
   }
 
 
@@ -1787,7 +2012,7 @@ header{
     margin:
       0
       0
-      1.2rem
+      1.15rem
       0;
   }
 
@@ -1798,7 +2023,7 @@ header{
 
     max-height: none;
 
-    object-fit: contain;
+    padding: 4px;
 
     border-radius: 11px;
   }
@@ -1807,17 +2032,17 @@ header{
   /* Position */
 
   .divisi h3 {
-    padding-top: 2.6rem;
+    padding-top: 2.4rem;
 
     margin-bottom: .3rem;
 
-    font-size: 1.45rem;
+    font-size: 1.4rem;
 
-    line-height: 1.18;
+    line-height: 1.2;
   }
 
   .divisi h3::after {
-    width: 30px;
+    width: 28px;
 
     margin-top: 8px;
   }
@@ -1826,24 +2051,24 @@ header{
   /* Company */
 
   .company {
-    margin-bottom: .9rem;
+    margin-bottom: .85rem;
 
-    font-size: 1rem;
+    font-size: .98rem;
   }
 
 
-  /* Smaller description */
+  /* Description */
 
   .timeline-content ul {
-    padding-left: 1.05rem;
+    padding-left: 1rem;
 
     font-size: .84rem;
 
-    line-height: 1.55;
+    line-height: 1.56;
   }
 
   .timeline-content li {
-    margin-bottom: .58rem;
+    margin-bottom: .55rem;
   }
 }
 
@@ -1878,6 +2103,7 @@ header{
 
   .timeline-item::before {
     left: 1px;
+
     top: 21px;
 
     width: 9px;
@@ -1891,36 +2117,36 @@ header{
   }
 
   .timeline-content .date {
-    top: 13px;
-    right: 12px;
-
-    font-size: .54rem;
+    top: 12px;
+    right: 11px;
 
     padding: 4px 7px;
+
+    font-size: .52rem;
   }
 
   .timeline-image {
-    margin-bottom: .95rem;
+    margin-bottom: .9rem;
   }
 
   .divisi h3 {
-    padding-top: 2.4rem;
+    padding-top: 2.35rem;
 
-    font-size: 1.28rem;
+    font-size: 1.25rem;
   }
 
   .company {
-    font-size: .92rem;
+    font-size: .9rem;
   }
 
   .timeline-content ul {
-    font-size: .81rem;
+    font-size: .8rem;
 
     line-height: 1.5;
   }
 
   .timeline-content li {
-    margin-bottom: .5rem;
+    margin-bottom: .48rem;
   }
 }
 
@@ -1931,18 +2157,23 @@ header{
 
 @media (prefers-reduced-motion: reduce) {
 
+  .experience::after,
   .timeline-item::before,
   .timeline-content .date::before {
     animation: none;
   }
 
   .timeline-content,
-  .timeline-image img {
+  .timeline-image img,
+  .timeline-image::before,
+  .divisi h3::after,
+  .company {
     transition: none;
   }
 
   .timeline-content:hover,
-  .timeline-image img:hover {
+  .timeline-image img:hover,
+  .timeline-content li:hover {
     transform: none;
   }
 }
