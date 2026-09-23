@@ -1946,125 +1946,741 @@ header{
     transform: none;
   }
 }
-/*=========================================
-    PELATIHAN
-=========================================*/
+/* =========================================================
+   PELATIHAN / TRAINING & CERTIFICATIONS
+   ========================================================= */
 
-.pelatihan-container{
+.pelatihan {
+    position: relative;
+    padding: 110px 0 120px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(56, 189, 248, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 92% 75%,
+            rgba(99, 102, 241, 0.09),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #07111f 50%,
+            #020617 100%
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND UI GRID
+   ========================================================= */
+
+.pelatihan::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(148, 163, 184, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 12%,
+            black 88%,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DECORATIVE ORBS
+   ========================================================= */
+
+.pelatihan::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -300px;
+    top: 20%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(56, 189, 248, 0.07),
+            transparent 65%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+
+    animation: trainingOrb 10s ease-in-out infinite;
+}
+
+@keyframes trainingOrb {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-60px, 30px);
+    }
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.pelatihan-container {
+
+    position: relative;
+    z-index: 2;
+
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(420px, 1fr)
+        );
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   TRAINING CARD
+   ========================================================= */
+
+.pelatihan-box {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: minmax(220px, 42%) minmax(0, 1fr);
 
     gap: 25px;
 
+    min-height: 310px;
+
+    padding: 22px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 23, 42, 0.95),
+            rgba(15, 23, 42, 0.78)
+        );
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.12);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        border-color .35s ease,
+        box-shadow .35s ease;
 }
 
-.pelatihan-box{
 
-    background: rgba(255,255,255,.05);
+/* Card hover */
 
-    padding: 25px;
+.pelatihan-box:hover {
 
-    border-radius: 18px;
+    transform:
+        translateY(-8px)
+        scale(1.008);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border-color:
+        rgba(56, 189, 248, 0.30);
 
-    transition: .3s;
-
-}
-.pelatihan-box{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    background:rgba(255,255,255,.05);
-
-    padding:18px;
-
-    border-radius:18px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    transition:.3s;
-
-}
-.about img{
-
-    width:100px;
-
-    height:100px;
-
-    object-fit:contain;
-
-    flex-shrink:0;
-
-    display:flex;
-
-    justify-content:center;
-
-    width:350px;
-
-    border-radius:20px;
-
-    box-shadow:var(--shadow);
-
-
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.38),
+        0 0 35px rgba(56, 189, 248, 0.05);
 }
 
-.pelatihan-box:hover{
 
-    transform: translateY(-8px);
+/* =========================================================
+   CARD TOP ACCENT
+   ========================================================= */
 
-    border-color: var(--main-color);
+.pelatihan-box::before {
 
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 70px;
+    height: 2px;
+
+    background: var(--main-color, #38bdf8);
+
+    box-shadow:
+        0 0 15px
+        rgba(56, 189, 248, 0.5);
+
+    transition:
+        width .45s ease;
 }
 
-.pelatihan-box h3{
+.pelatihan-box:hover::before {
 
-    color: white;
-
-    margin-bottom: 10px;
-
+    width: 180px;
 }
 
-.pelatihan-box span{
 
-    color: var(--main-color);
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
 
-    font-size: 14px;
+.pelatihan-box::after {
 
+    content: "CERT";
+
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    color: rgba(148, 163, 184, 0.25);
+
+    font-size: .58rem;
+
+    font-weight: 800;
+
+    letter-spacing: .2em;
 }
 
-.pelatihan-box p{
 
-    color: var(--text-secondary);
+/* =========================================================
+   CERTIFICATE AREA
+   ========================================================= */
 
-    margin-top: 15px;
+.pelatihan-box img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 250px;
+
+    max-height: 330px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    padding: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b1220,
+            #111c2e
+        );
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.15);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.30);
+
+    cursor: pointer;
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+}
+
+
+/* Certificate hover */
+
+.pelatihan-box:hover img {
+
+    transform:
+        scale(1.025)
+        translateY(-2px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(0, 0, 0, 0.40),
+        0 0 25px
+        rgba(56, 189, 248, 0.05);
+}
+
+
+/* =========================================================
+   CERTIFICATE FRAME
+   ========================================================= */
+
+.pelatihan-box img {
+
+    outline: 1px solid
+        rgba(255, 255, 255, 0.025);
+
+    outline-offset: -5px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.pelatihan-box h3 {
+
+    margin: 30px 0 8px;
+
+    color: #f8fafc;
+
+    font-size: 1.55rem;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: -.025em;
+}
+
+
+/* Small title accent */
+
+.pelatihan-box h3::after {
+
+    content: "";
+
+    display: block;
+
+    width: 35px;
+    height: 2px;
+
+    margin-top: 10px;
+
+    border-radius: 10px;
+
+    background:
+        var(--main-color, #38bdf8);
+
+    transition:
+        width .35s ease;
+}
+
+.pelatihan-box:hover h3::after {
+
+    width: 65px;
+}
+
+
+/* =========================================================
+   DATE BADGE
+   ========================================================= */
+
+.pelatihan-box span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 6px 11px;
+
+    color: #bae6fd;
+
+    background:
+        rgba(56, 189, 248, 0.07);
+
+    border:
+        1px solid
+        rgba(56, 189, 248, 0.18);
+
+    border-radius: 999px;
+
+    font-size: .68rem;
+
+    font-weight: 700;
+
+    letter-spacing: .04em;
+}
+
+
+/* Date dot */
+
+.pelatihan-box span::before {
+
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--main-color, #38bdf8);
+
+    box-shadow:
+        0 0 10px
+        rgba(56, 189, 248, 0.7);
+
+    animation:
+        certDot 2s ease-in-out infinite;
+}
+
+@keyframes certDot {
+
+    0%,
+    100% {
+        opacity: .5;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.pelatihan-box p {
+
+    margin-top: 16px;
+
+    color: var(--text-secondary, #94a3b8);
+
+    font-size: .95rem;
 
     line-height: 1.7;
-
 }
 
 
-.timeline-item li{
+/* =========================================================
+   MICRO UI ELEMENT
+   ========================================================= */
 
-    font-size:22px;
+.pelatihan-box .certificate-label {
 
-    line-height:1.9;
+    position: absolute;
 
+    left: 32px;
+    bottom: 32px;
+
+    padding: 5px 9px;
+
+    color: #e2e8f0;
+
+    background:
+        rgba(2, 6, 23, .78);
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .15);
+
+    border-radius: 6px;
+
+    font-size: .5rem;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    backdrop-filter: blur(8px);
 }
-.pelatihan-box p{
 
-    font-size:22x;
 
-    line-height:1.8;
+/* =========================================================
+   GLOBAL TIMELINE TEXT FIX
+   ========================================================= */
 
+.timeline-item li {
+
+    font-size: 1rem;
+
+    line-height: 1.7;
 }
 
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .pelatihan {
+
+        padding: 90px 0 100px;
+    }
+
+    .pelatihan-container {
+
+        width: 92%;
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .pelatihan-box {
+
+        grid-template-columns:
+            minmax(240px, 42%)
+            minmax(0, 1fr);
+
+        min-height: 290px;
+    }
+
+    .pelatihan-box img {
+
+        min-height: 230px;
+    }
+
+    .pelatihan-box h3 {
+
+        font-size: 1.4rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .pelatihan {
+
+        padding: 75px 0 90px;
+    }
+
+    .pelatihan-container {
+
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .pelatihan-box {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        min-height: 0;
+
+        padding: 15px;
+
+        border-radius: 18px;
+    }
+
+
+    /* Certificate */
+
+    .pelatihan-box img {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        max-height: none;
+
+        padding: 5px;
+
+        border-radius: 12px;
+
+        object-fit: contain;
+    }
+
+
+    /* Content */
+
+    .pelatihan-box h3 {
+
+        margin: 0 0 7px;
+
+        font-size: 1.35rem;
+
+        line-height: 1.2;
+    }
+
+    .pelatihan-box h3::after {
+
+        margin-top: 7px;
+
+        width: 28px;
+    }
+
+    .pelatihan-box:hover h3::after {
+
+        width: 45px;
+    }
+
+
+    /* Date */
+
+    .pelatihan-box span {
+
+        font-size: .62rem;
+
+        padding: 5px 9px;
+    }
+
+
+    /* Description */
+
+    .pelatihan-box p {
+
+        margin-top: 11px;
+
+        font-size: .84rem;
+
+        line-height: 1.55;
+    }
+
+
+    /* Hide decorative text on small screen */
+
+    .pelatihan-box::after {
+
+        font-size: .48rem;
+
+        top: 13px;
+        right: 14px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .pelatihan {
+
+        padding: 60px 0 75px;
+    }
+
+    .pelatihan-container {
+
+        width: 94%;
+
+        gap: 18px;
+    }
+
+    .pelatihan-box {
+
+        padding: 12px;
+
+        border-radius: 16px;
+    }
+
+    .pelatihan-box img {
+
+        border-radius: 10px;
+    }
+
+    .pelatihan-box h3 {
+
+        font-size: 1.2rem;
+    }
+
+    .pelatihan-box span {
+
+        font-size: .58rem;
+    }
+
+    .pelatihan-box p {
+
+        font-size: .8rem;
+
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pelatihan::after,
+    .pelatihan-box span::before {
+
+        animation: none;
+    }
+
+    .pelatihan-box,
+    .pelatihan-box img {
+
+        transition: none;
+    }
+
+    .pelatihan-box:hover {
+
+        transform: none;
+    }
+}
 /*=========================================
     ORGANISASI
 =========================================*/
