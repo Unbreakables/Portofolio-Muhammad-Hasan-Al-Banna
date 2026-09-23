@@ -1093,7 +1093,7 @@ header{
 }
 
 /* =========================================================
-   EXPERIENCE — MODERN FINANCE PORTFOLIO
+   EXPERIENCE — PREMIUM / MODERN
    ========================================================= */
 
 .experience {
@@ -1101,49 +1101,20 @@ header{
   padding: 110px 0 130px;
   overflow: hidden;
   background:
-    radial-gradient(
-      circle at 10% 10%,
-      rgba(59, 130, 246, 0.12),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 90% 80%,
-      rgba(14, 165, 233, 0.08),
-      transparent 30%
-    ),
+    radial-gradient(circle at 8% 15%, rgba(59,130,246,.13), transparent 30%),
+    radial-gradient(circle at 92% 80%, rgba(14,165,233,.09), transparent 30%),
     #020617;
 }
 
-/* ---------------------------------------------------------
-   BACKGROUND GRID
-   --------------------------------------------------------- */
-
+/* Background grid */
 .experience::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background-image:
-    linear-gradient(
-      rgba(148, 163, 184, 0.025) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(148, 163, 184, 0.025) 1px,
-      transparent 1px
-    );
-
+    linear-gradient(rgba(148,163,184,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,.025) 1px, transparent 1px);
   background-size: 45px 45px;
-
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 12%,
-    black 88%,
-    transparent
-  );
-
   pointer-events: none;
 }
 
@@ -1151,21 +1122,16 @@ header{
 .experience::after {
   content: "";
   position: absolute;
-
-  width: 450px;
-  height: 450px;
-
-  top: 20%;
-  right: -250px;
-
+  width: 420px;
+  height: 420px;
+  right: -220px;
+  top: 25%;
   border-radius: 50%;
-
-  background: rgba(56, 189, 248, 0.04);
-
-  filter: blur(80px);
-
+  background: rgba(56,189,248,.045);
+  filter: blur(90px);
   pointer-events: none;
 }
+
 
 /* =========================================================
    HEADING
@@ -1175,34 +1141,27 @@ header{
   position: relative;
   z-index: 2;
 
-  margin-bottom: 85px;
+  margin-bottom: 80px;
 
   text-align: center;
 
   color: #f8fafc;
-
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.6rem, 5vw, 4rem);
   font-weight: 800;
-
-  letter-spacing: -0.045em;
+  letter-spacing: -.045em;
 }
 
 .experience .heading::before {
   content: "CAREER JOURNEY";
 
   display: block;
-
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 
   color: #38bdf8;
-
-  font-size: 0.68rem;
+  font-size: .68rem;
   font-weight: 700;
-
-  letter-spacing: 0.28em;
+  letter-spacing: .25em;
 }
-
-/* small line below heading */
 
 .experience .heading::after {
   content: "";
@@ -1212,14 +1171,13 @@ header{
   width: 55px;
   height: 3px;
 
-  margin: 18px auto 0;
+  margin: 17px auto 0;
 
-  border-radius: 20px;
+  border-radius: 10px;
 
   background: #38bdf8;
 
-  box-shadow:
-    0 0 18px rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 18px rgba(56,189,248,.4);
 }
 
 
@@ -1231,12 +1189,9 @@ header{
   position: relative;
   z-index: 2;
 
-  width: min(1200px, 92%);
-
+  width: min(1220px, 93%);
   margin: 0 auto;
 }
-
-/* Main vertical line */
 
 .timeline::before {
   content: "";
@@ -1245,8 +1200,7 @@ header{
 
   top: 0;
   bottom: 0;
-
-  left: 31px;
+  left: 30px;
 
   width: 2px;
 
@@ -1254,15 +1208,15 @@ header{
     linear-gradient(
       to bottom,
       transparent,
-      rgba(56, 189, 248, 0.35) 8%,
-      rgba(56, 189, 248, 0.35) 92%,
+      rgba(56,189,248,.38) 8%,
+      rgba(56,189,248,.38) 92%,
       transparent
     );
 }
 
 
 /* =========================================================
-   TIMELINE ITEM
+   ITEM
    ========================================================= */
 
 .timeline-item {
@@ -1270,27 +1224,23 @@ header{
 
   display: grid;
 
-  grid-template-columns:
-    155px
-    minmax(0, 1fr);
+  grid-template-columns: 130px minmax(0,1fr);
 
-  gap: 2.3rem;
+  gap: 2rem;
 
-  margin-left: 5.5rem;
-
+  margin-left: 5.2rem;
   margin-bottom: 4.5rem;
 }
 
 
-/* timeline dot */
-
+/* Timeline node */
 .timeline-item::before {
   content: "";
 
   position: absolute;
 
-  top: 34px;
-  left: -4.2rem;
+  top: 36px;
+  left: -4rem;
 
   width: 13px;
   height: 13px;
@@ -1302,26 +1252,25 @@ header{
   border: 3px solid #020617;
 
   box-shadow:
-    0 0 0 5px rgba(56, 189, 248, 0.08),
-    0 0 20px rgba(56, 189, 248, 0.4);
+    0 0 0 5px rgba(56,189,248,.08),
+    0 0 20px rgba(56,189,248,.45);
 
-  z-index: 3;
+  z-index: 5;
 
-  animation: experiencePulse 3s ease-in-out infinite;
+  animation: timelinePulse 3s ease-in-out infinite;
 }
 
-@keyframes experiencePulse {
-  0%,
-  100% {
+@keyframes timelinePulse {
+  0%,100% {
     box-shadow:
-      0 0 0 5px rgba(56, 189, 248, 0.08),
-      0 0 15px rgba(56, 189, 248, 0.25);
+      0 0 0 5px rgba(56,189,248,.08),
+      0 0 15px rgba(56,189,248,.25);
   }
 
   50% {
     box-shadow:
-      0 0 0 8px rgba(56, 189, 248, 0.04),
-      0 0 25px rgba(56, 189, 248, 0.45);
+      0 0 0 8px rgba(56,189,248,.04),
+      0 0 25px rgba(56,189,248,.45);
   }
 }
 
@@ -1330,40 +1279,33 @@ header{
    META / DATE
    ========================================================= */
 
+/*
+   Date dibuat tidak lagi dominan di kolom kiri.
+   Kolom kiri dibuat minimal supaya card lebih lebar.
+*/
+
 .timeline-meta {
-  padding-top: 27px;
+  padding-top: 25px;
 }
 
 .timeline-meta::before {
-  content: "EXPERIENCE";
-
-  display: block;
-
-  margin-bottom: 8px;
-
-  color: #38bdf8;
-
-  font-size: 0.62rem;
-  font-weight: 700;
-
-  letter-spacing: 0.18em;
+  content: "";
 }
 
 .timeline-meta .date {
   color: #94a3b8;
-
-  font-size: 0.92rem;
-
-  line-height: 1.55;
+  font-size: .9rem;
 }
 
 
 /* =========================================================
-   EXPERIENCE CARD
+   MAIN CARD
    ========================================================= */
 
 .timeline-content {
   position: relative;
+
+  min-height: 320px;
 
   padding: 2.5rem;
 
@@ -1372,27 +1314,36 @@ header{
   background:
     linear-gradient(
       145deg,
-      rgba(15, 23, 42, 0.96),
-      rgba(15, 23, 42, 0.86)
+      rgba(15,23,42,.98),
+      rgba(15,23,42,.88)
     );
 
-  border: 1px solid rgba(148, 163, 184, 0.12);
+  border: 1px solid rgba(148,163,184,.13);
 
   border-radius: 22px;
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    0 20px 55px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.025);
 
   transition:
-    transform 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(56,189,248,.25);
+
+  box-shadow:
+    0 28px 65px rgba(0,0,0,.38),
+    0 0 30px rgba(56,189,248,.04);
 }
 
 
-/* card top accent */
-
+/* Top accent line */
 .timeline-content::before {
   content: "";
 
@@ -1401,35 +1352,86 @@ header{
   top: 0;
   left: 0;
 
-  width: 80px;
+  width: 90px;
   height: 2px;
 
   background: #38bdf8;
 
-  box-shadow:
-    0 0 18px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 15px rgba(56,189,248,.5);
 
-  transition:
-    width 0.4s ease;
+  transition: width .4s ease;
 }
 
 .timeline-content:hover::before {
-  width: 180px;
-}
-
-.timeline-content:hover {
-  transform: translateY(-6px);
-
-  border-color: rgba(56, 189, 248, 0.22);
-
-  box-shadow:
-    0 28px 65px rgba(0, 0, 0, 0.38),
-    0 0 30px rgba(56, 189, 248, 0.035);
+  width: 200px;
 }
 
 
 /* =========================================================
-   CERTIFICATE — LEFT
+   DATE — RIGHT TOP
+   ========================================================= */
+
+.timeline-content .date {
+  position: absolute;
+
+  top: 22px;
+  right: 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 13px;
+
+  color: #bae6fd;
+
+  background: rgba(14,165,233,.07);
+
+  border: 1px solid rgba(56,189,248,.2);
+
+  border-radius: 999px;
+
+  font-size: .72rem;
+  font-weight: 700;
+
+  letter-spacing: .05em;
+
+  white-space: nowrap;
+
+  z-index: 4;
+}
+
+.timeline-content .date::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #38bdf8;
+
+  box-shadow: 0 0 10px rgba(56,189,248,.7);
+
+  animation: dateDot 2s ease-in-out infinite;
+}
+
+@keyframes dateDot {
+  0%,100% {
+    opacity: .5;
+    transform: scale(.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   CERTIFICATE — BIG LEFT
    ========================================================= */
 
 .timeline-image {
@@ -1437,17 +1439,17 @@ header{
 
   float: left;
 
-  width: 43%;
+  width: 49%;
 
   margin:
     0
-    2.5rem
+    2.7rem
     1rem
     0;
 }
 
 
-/* certificate image */
+/* Certificate image */
 
 .timeline-image img {
   display: block;
@@ -1455,36 +1457,40 @@ header{
   width: 100%;
   height: auto;
 
-  max-height: 430px;
+  max-height: 480px;
 
   object-fit: contain;
 
-  border-radius: 14px;
+  object-position: center;
 
-  background: #0f172a;
+  padding: 4px;
 
-  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: #0b1220;
+
+  border: 1px solid rgba(148,163,184,.15);
+
+  border-radius: 15px;
 
   box-shadow:
-    0 14px 35px rgba(0, 0, 0, 0.3);
+    0 15px 40px rgba(0,0,0,.32);
 
   cursor: pointer;
 
   transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
+    transform .4s ease,
+    box-shadow .4s ease;
 }
 
 .timeline-image img:hover {
-  transform: scale(1.015);
+  transform: scale(1.018);
 
   box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.4),
-    0 0 25px rgba(56, 189, 248, 0.06);
+    0 22px 50px rgba(0,0,0,.4),
+    0 0 25px rgba(56,189,248,.06);
 }
 
 
-/* certificate badge */
+/* Certificate label */
 
 .timeline-image::before {
   content: "CERTIFICATE";
@@ -1500,16 +1506,16 @@ header{
 
   color: #e0f2fe;
 
-  background: rgba(2, 6, 23, 0.82);
+  background: rgba(2,6,23,.82);
 
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  border: 1px solid rgba(56,189,248,.2);
 
   border-radius: 6px;
 
-  font-size: 0.5rem;
+  font-size: .5rem;
   font-weight: 700;
 
-  letter-spacing: 0.13em;
+  letter-spacing: .13em;
 
   backdrop-filter: blur(8px);
 }
@@ -1520,30 +1526,30 @@ header{
    ========================================================= */
 
 .divisi h3 {
-  position: relative;
+  margin: 0 0 .45rem;
 
-  margin: 0 0 0.5rem;
+  padding-top: 2.8rem;
 
   color: #f8fafc;
 
-  font-size: clamp(1.9rem, 3vw, 2.55rem);
+  font-size: clamp(2rem, 3vw, 2.55rem);
 
   line-height: 1.12;
 
   font-weight: 800;
 
-  letter-spacing: -0.035em;
+  letter-spacing: -.035em;
 }
 
 
-/* tiny underline */
+/* Small accent under position */
 
 .divisi h3::after {
   content: "";
 
   display: block;
 
-  width: 38px;
+  width: 40px;
   height: 2px;
 
   margin-top: 11px;
@@ -1552,7 +1558,7 @@ header{
 
   background: #38bdf8;
 
-  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(56,189,248,.3);
 }
 
 
@@ -1584,15 +1590,15 @@ header{
 
   color: #cbd5e1;
 
-  font-size: 1.02rem;
+  font-size: 1rem;
 
   line-height: 1.7;
 }
 
 .timeline-content li {
-  margin-bottom: 0.85rem;
+  margin-bottom: .8rem;
 
-  padding-left: 0.2rem;
+  padding-left: .2rem;
 }
 
 .timeline-content li::marker {
@@ -1604,21 +1610,16 @@ header{
 }
 
 
-/* =========================================================
-   CLEAR FLOAT
-   ========================================================= */
-
+/* Clear float */
 .timeline-content::after {
   content: "";
-
   display: block;
-
   clear: both;
 }
 
 
 /* =========================================================
-   CERTIFICATE MODAL
+   MODAL
    ========================================================= */
 
 .modal img {
@@ -1626,8 +1627,8 @@ header{
 
   width: auto;
 
-  max-width: 92vw;
-  max-height: 88vh;
+  max-width: 94vw;
+  max-height: 90vh;
 
   object-fit: contain;
 
@@ -1645,20 +1646,16 @@ header{
     padding: 90px 0 105px;
   }
 
-  .experience .heading {
-    margin-bottom: 60px;
-  }
-
   .timeline {
     width: 92%;
   }
 
   .timeline-item {
-    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-columns: 100px minmax(0,1fr);
 
-    gap: 1.6rem;
+    gap: 1.4rem;
 
-    margin-left: 4.7rem;
+    margin-left: 4.6rem;
   }
 
   .timeline-content {
@@ -1666,13 +1663,13 @@ header{
   }
 
   .timeline-image {
-    width: 40%;
+    width: 47%;
 
     margin-right: 1.8rem;
   }
 
   .timeline-image img {
-    max-height: 350px;
+    max-height: 390px;
   }
 
   .divisi h3 {
@@ -1684,9 +1681,15 @@ header{
   }
 
   .timeline-content ul {
-    font-size: 0.95rem;
+    font-size: .94rem;
+    line-height: 1.62;
+  }
 
-    line-height: 1.65;
+  .timeline-content .date {
+    top: 18px;
+    right: 18px;
+
+    font-size: .65rem;
   }
 }
 
@@ -1704,25 +1707,12 @@ header{
   .experience .heading {
     margin-bottom: 45px;
 
-    font-size: 2.4rem;
+    font-size: 2.35rem;
   }
 
   .experience .heading::before {
-    margin-bottom: 8px;
-
-    font-size: 0.56rem;
-
-    letter-spacing: 0.2em;
+    font-size: .55rem;
   }
-
-  .experience .heading::after {
-    width: 42px;
-
-    margin-top: 13px;
-  }
-
-
-  /* timeline */
 
   .timeline {
     width: 92%;
@@ -1743,8 +1733,7 @@ header{
   }
 
   .timeline-item::before {
-    top: 25px;
-
+    top: 24px;
     left: 2px;
 
     width: 10px;
@@ -1752,35 +1741,43 @@ header{
   }
 
 
-  /* date */
-
+  /* Date column disappears */
   .timeline-meta {
-    padding-top: 0;
-
-    margin-bottom: 0.9rem;
-  }
-
-  .timeline-meta::before {
-    margin-bottom: 3px;
-
-    font-size: 0.5rem;
-  }
-
-  .timeline-meta .date {
-    font-size: 0.78rem;
+    display: none;
   }
 
 
-  /* card */
+  /* Card */
 
   .timeline-content {
-    padding: 1.25rem;
+    min-height: 0;
+
+    padding: 1.2rem;
 
     border-radius: 17px;
   }
 
 
-  /* certificate */
+  /* Date on card */
+
+  .timeline-content .date {
+    top: 15px;
+    right: 15px;
+
+    padding: 5px 9px;
+
+    font-size: .58rem;
+
+    gap: 5px;
+  }
+
+  .timeline-content .date::before {
+    width: 5px;
+    height: 5px;
+  }
+
+
+  /* Certificate */
 
   .timeline-image {
     float: none;
@@ -1806,20 +1803,13 @@ header{
     border-radius: 11px;
   }
 
-  .timeline-image::before {
-    top: 9px;
-    left: 9px;
 
-    padding: 4px 7px;
-
-    font-size: 0.45rem;
-  }
-
-
-  /* position */
+  /* Position */
 
   .divisi h3 {
-    margin-bottom: 0.35rem;
+    padding-top: 2.6rem;
+
+    margin-bottom: .3rem;
 
     font-size: 1.45rem;
 
@@ -1829,35 +1819,31 @@ header{
   .divisi h3::after {
     width: 30px;
 
-    height: 2px;
-
     margin-top: 8px;
   }
 
 
-  /* company */
+  /* Company */
 
   .company {
-    margin-bottom: 0.9rem;
+    margin-bottom: .9rem;
 
     font-size: 1rem;
   }
 
 
-  /* description */
+  /* Smaller description */
 
   .timeline-content ul {
     padding-left: 1.05rem;
 
-    font-size: 0.84rem;
+    font-size: .84rem;
 
     line-height: 1.55;
   }
 
   .timeline-content li {
-    margin-bottom: 0.58rem;
-
-    padding-left: 0.1rem;
+    margin-bottom: .58rem;
   }
 }
 
@@ -1882,65 +1868,76 @@ header{
     width: 94%;
   }
 
-  .timeline::before {
-    left: 7px;
-  }
-
   .timeline-item {
     padding-left: 1.55rem;
   }
 
+  .timeline::before {
+    left: 7px;
+  }
+
   .timeline-item::before {
     left: 1px;
-    top: 22px;
+    top: 21px;
 
     width: 9px;
     height: 9px;
   }
 
   .timeline-content {
-    padding: 1.05rem;
+    padding: 1rem;
 
     border-radius: 15px;
   }
 
+  .timeline-content .date {
+    top: 13px;
+    right: 12px;
+
+    font-size: .54rem;
+
+    padding: 4px 7px;
+  }
+
   .timeline-image {
-    margin-bottom: 1rem;
+    margin-bottom: .95rem;
   }
 
   .divisi h3 {
-    font-size: 1.3rem;
+    padding-top: 2.4rem;
+
+    font-size: 1.28rem;
   }
 
   .company {
-    font-size: 0.92rem;
+    font-size: .92rem;
   }
 
   .timeline-content ul {
-    font-size: 0.81rem;
+    font-size: .81rem;
 
     line-height: 1.5;
-
-    padding-left: 1rem;
   }
 
   .timeline-content li {
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem;
   }
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
+   REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
   .timeline-item::before,
+  .timeline-content .date::before {
+    animation: none;
+  }
+
   .timeline-content,
   .timeline-image img {
-    animation: none;
-
     transition: none;
   }
 
