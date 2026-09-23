@@ -1101,7 +1101,7 @@ header{
     overflow: hidden;
     isolation: isolate;
 
-    padding: 9rem 0 10rem;
+    padding: 8rem 0 9rem;
 
     background:
         radial-gradient(
@@ -1129,17 +1129,17 @@ header{
 
 .experience > .heading {
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
 }
 
 .experience > .heading span {
     display: block;
 
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
 
-    font-size: 1.35rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    letter-spacing: 0.45rem;
+    letter-spacing: 0.38rem;
 
     color: #159cff;
     text-transform: uppercase;
@@ -1148,7 +1148,8 @@ header{
 .experience > .heading h2 {
     margin: 0;
 
-    font-size: clamp(3.8rem, 5vw, 5.6rem);
+    font-size: clamp(3.2rem, 4.5vw, 4.8rem);
+    line-height: 1.05;
     font-weight: 800;
 
     color: #f4f7ff;
@@ -1159,10 +1160,10 @@ header{
 
     display: block;
 
-    width: 150px;
-    height: 4px;
+    width: 125px;
+    height: 3px;
 
-    margin: 1.8rem auto 0;
+    margin: 1.35rem auto 0;
 
     border-radius: 999px;
 
@@ -1186,7 +1187,7 @@ header{
 .timeline {
     position: relative;
 
-    width: min(1050px, 90%);
+    width: min(1180px, 92%);
     margin: 0 auto;
 
     padding-left: 55px;
@@ -1225,7 +1226,7 @@ header{
 
 
 /* =========================================================
-   TIMELINE ITEM
+   TIMELINE ITEM / CARD
 ========================================================= */
 
 .timeline-item {
@@ -1233,16 +1234,16 @@ header{
 
     display: grid;
 
-    grid-template-columns: 185px minmax(0, 1fr);
-    gap: 28px;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 32px;
 
     align-items: center;
 
-    margin-bottom: 3rem;
+    margin-bottom: 2.4rem;
 
-    padding: 2.2rem 2.4rem;
+    padding: 2rem 2.5rem;
 
-    min-height: 215px;
+    min-height: 205px;
 
     border: 1px solid rgba(0, 132, 255, 0.65);
     border-radius: 18px;
@@ -1277,8 +1278,7 @@ header{
 
 
 /* =========================================================
-   TIMELINE CIRCLE / DOT
-   -- crosses the line AND card exactly like reference
+   TIMELINE CIRCLE
 ========================================================= */
 
 .timeline-dot {
@@ -1314,7 +1314,6 @@ header{
 }
 
 
-/* small glowing core */
 .timeline-dot::after {
     content: "";
 
@@ -1343,14 +1342,14 @@ header{
 ========================================================= */
 
 .timeline-image {
-    width: 185px;
-    height: 160px;
+    width: 200px;
+    height: 165px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 12px;
+    padding: 11px;
 
     border: 1px solid rgba(0, 132, 255, 0.8);
     border-radius: 12px;
@@ -1397,14 +1396,14 @@ header{
 .divisi {
     position: relative;
 
-    padding-right: 170px;
+    padding-right: 175px;
 }
 
 .divisi h3 {
     margin: 0;
 
-    font-size: 2rem;
-    line-height: 1.15;
+    font-size: 2.05rem;
+    line-height: 1.12;
     font-weight: 800;
 
     color: #f5f7ff;
@@ -1421,12 +1420,12 @@ header{
     top: 0;
     right: 0;
 
-    padding: 0.55rem 1.2rem;
+    padding: 0.5rem 1rem;
 
     border: 1px solid #008cff;
     border-radius: 999px;
 
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     line-height: 1;
 
     color: #16b2ff;
@@ -1445,11 +1444,11 @@ header{
 ========================================================= */
 
 .company {
-    margin-top: 0.65rem;
-    margin-bottom: 1.1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
 
-    font-size: 1.55rem;
-    line-height: 1.2;
+    font-size: 1.4rem;
+    line-height: 1.15;
     font-weight: 700;
 
     color: #159cff;
@@ -1457,7 +1456,7 @@ header{
 
 
 /* =========================================================
-   DESCRIPTION
+   DESCRIPTION — TIGHT
 ========================================================= */
 
 .timeline-item ul {
@@ -1470,11 +1469,11 @@ header{
 .timeline-item li {
     position: relative;
 
-    margin: 0 0 0.55rem;
-    padding-left: 2rem;
+    margin: 0 0 0.25rem;
+    padding-left: 1.65rem;
 
-    font-size: 1.22rem;
-    line-height: 1.35;
+    font-size: 1.12rem;
+    line-height: 1.28;
 
     color: #d8e7fa;
 }
@@ -1485,16 +1484,17 @@ header{
 
 
 /* bullet */
+
 .timeline-item li::before {
     content: "";
 
     position: absolute;
 
     left: 0;
-    top: 0.55em;
+    top: 0.52em;
 
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
 
     border-radius: 50%;
 
@@ -1513,11 +1513,11 @@ header{
 .timeline-content a {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.65rem;
 
-    margin-top: 1.2rem;
+    margin-top: 0.75rem;
 
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 600;
 
     color: #159cff;
@@ -1542,11 +1542,16 @@ header{
 @media (min-width: 1200px) {
 
     .timeline {
-        width: min(1050px, 86%);
+        width: min(1180px, 90%);
     }
 
     .timeline-item {
-        grid-template-columns: 185px minmax(0, 1fr);
+        grid-template-columns: 200px minmax(0, 1fr);
+    }
+
+    .timeline-image {
+        width: 200px;
+        height: 165px;
     }
 }
 
@@ -1578,7 +1583,7 @@ header{
 
         gap: 20px;
 
-        padding: 1.8rem;
+        padding: 1.7rem;
     }
 
     .timeline-image {
@@ -1590,12 +1595,25 @@ header{
         padding-right: 0;
     }
 
+    .divisi h3 {
+        font-size: 1.75rem;
+    }
+
     .period {
         position: static;
 
         display: inline-block;
 
-        margin-top: 0.8rem;
+        margin-top: 0.65rem;
+    }
+
+    .company {
+        margin-bottom: 0.6rem;
+    }
+
+    .timeline-item li {
+        margin-bottom: 0.2rem;
+        line-height: 1.28;
     }
 }
 
@@ -1607,32 +1625,37 @@ header{
 @media (max-width: 600px) {
 
     .experience {
-        padding: 7rem 0 8rem;
+        padding: 6.5rem 0 7rem;
     }
 
     .experience > .heading {
-        margin-bottom: 4rem;
+        margin-bottom: 3.5rem;
     }
 
     .experience > .heading span {
-        font-size: 1rem;
-        letter-spacing: 0.32rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.28rem;
     }
 
     .experience > .heading h2 {
-        font-size: 3.4rem;
+        font-size: 3.1rem;
+        line-height: 1;
     }
 
     .experience > .heading h2::after {
-        width: 100px;
+        width: 90px;
         height: 3px;
+
+        margin-top: 1.1rem;
     }
 
 
-    /* timeline stays left-aligned inside centered section */
+    /* =====================================================
+       TIMELINE
+    ===================================================== */
+
     .timeline {
         width: 94%;
-
         padding-left: 35px;
     }
 
@@ -1640,8 +1663,6 @@ header{
         left: 11px;
     }
 
-
-    /* circle crosses card */
     .timeline-dot {
         left: -35px;
 
@@ -1650,28 +1671,36 @@ header{
     }
 
 
+    /* =====================================================
+       CARD
+    ===================================================== */
+
     .timeline-item {
         display: flex;
         flex-direction: column;
         align-items: stretch;
 
-        gap: 1.5rem;
+        gap: 1.15rem;
 
-        padding: 1.6rem;
+        padding: 1.45rem;
 
-        margin-bottom: 2.5rem;
+        margin-bottom: 2.1rem;
 
         border-radius: 14px;
     }
 
 
+    /* =====================================================
+       IMAGE
+    ===================================================== */
+
     .timeline-image {
         width: 100%;
         height: auto;
 
-        min-height: 180px;
+        min-height: 175px;
 
-        padding: 10px;
+        padding: 9px;
     }
 
     .timeline-image img {
@@ -1679,46 +1708,60 @@ header{
     }
 
 
+    /* =====================================================
+       CONTENT
+    ===================================================== */
+
     .divisi {
         padding-right: 0;
     }
 
     .divisi h3 {
-        font-size: 1.65rem;
-        line-height: 1.2;
+        font-size: 1.55rem;
+        line-height: 1.12;
     }
 
     .company {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
 
-        margin-top: 0.55rem;
-        margin-bottom: 0.9rem;
+        margin-top: 0.45rem;
+        margin-bottom: 0.65rem;
     }
-
 
     .period {
         position: static;
 
-        margin-top: 0.8rem;
+        margin-top: 0.65rem;
 
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
 
-    /* VERY TIGHT DESCRIPTION */
+    /* =====================================================
+       VERY TIGHT DESCRIPTION
+    ===================================================== */
+
     .timeline-item li {
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.2rem;
 
-        padding-left: 1.7rem;
+        padding-left: 1.5rem;
 
-        font-size: 1.08rem;
-        line-height: 1.3;
+        font-size: 1.02rem;
+        line-height: 1.25;
     }
+
+    .timeline-item li::before {
+        width: 6px;
+        height: 6px;
+
+        top: 0.52em;
+    }
+
 
     .timeline-content a {
-        margin-top: 1rem;
+        margin-top: 0.75rem;
 
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
 }
 /*=========================================
