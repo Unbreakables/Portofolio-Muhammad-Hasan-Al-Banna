@@ -1093,23 +1093,6 @@ header{
 }
 
 /* =========================================================
-   VARIABLES (THEME CONFIGURATION)
-   ========================================================= */
-:root {
-  --bg-dark: #020617;
-  --accent: #38bdf8;
-  --accent-glow: rgba(56, 189, 248, 0.4);
-  --accent-faded: rgba(56, 189, 248, 0.15);
-  
-  --surface: rgba(15, 23, 42, 0.6);
-  --surface-hover: rgba(15, 23, 42, 0.85);
-  
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-body: #cbd5e1;
-  
-  --border-subtle: rgba(148, 163, 184, 0.15);
-  --border-hover: rgba(56, 189, 248, 0.5);/* =========================================================
    EXPERIENCE / CAREER JOURNEY
    ========================================================= */
 
